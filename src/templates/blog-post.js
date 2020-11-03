@@ -1,107 +1,57 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+//templates/blog-post.js
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
+import React from "react"
+import { graphql, Link } from "gatsby"
+
+import Layout from "../components/Layout"
+import Img from "gatsby-image"
 import SEO from "../components/seo"
 
-const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
-
-  return (
-    <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-    </Layout>
-  )
-}
-
-export default BlogPostTemplate
-
-export const pageQuery = graphql`
-  query BlogPostBySlug(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    markdownRemark(id: { eq: $id }) {
+export const query = graphql`
+  query($slug: String!) {
+    contentfulPost(slug: { eq: $slug }) {
       id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
+      author
+      date
+      title
+      slug
+      image {
+        fluid(maxWidth: 750) {
+          ...GatsbyContentfulFluid
+        }
       }
-    }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
-    }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
+      content {
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }
 `
+
+const BlogPost = props => {
+  console.log({ props })
+  // {console.log(props.data.contentfulPost.title)}
+
+  const { title, date, image } = props.data.contentfulPost
+  return (
+    <Layout>
+      <SEO title={title} />
+      <Link to="/blog/">Visit the Blog Page</Link>
+      <div className="content">
+        <h1>{title}</h1>
+        <span className="meta">Posted on {date}</span>
+        {image && <div><Img className="featured" fluid={image.fluid} alt={title} /></div>}
+        {/* {documentToReactComponents(props.data.contentfulPost.content.childMarkdownRemark.html)} */}
+          <p
+            dangerouslySetInnerHTML={{
+              __html:
+                props.data.contentfulPost.content.childMarkdownRemark.html,
+            }}
+          />
+      </div>
+    </Layout>
+  )
+}
+
+export default BlogPost
