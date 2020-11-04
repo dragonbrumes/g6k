@@ -8,7 +8,7 @@ import Nav from "./Nav"
 import "./layout.css"
 
 const Wrapper = styled("div")`
-  // background: lightgrey;
+  background: #fdf0d5;
   display: grid;
   grid-template-columns: 15% auto 15%;
   grid-template-rows: auto;
@@ -24,16 +24,18 @@ const Header = styled("header")`
   padding: 0;
   margin: 0 0 5px 0;
   grid-area: header;
+  position: sticky; 
+  top: 0;
 `
 
 const Main = styled("main")`
-  background: white;
+  background: #fdf0d5;
   max-width: 850px;
   margin: 5px auto 0 auto;
   grid-area: main;
 `
 const Footer = styled("footer")`
-  background: green;
+  background: #c6d8d3;
   height: 50px;
   padding: 20px;
   flex-shrink: 0;
@@ -48,7 +50,8 @@ const Layout = ({ children }) => (
     <Global
         styles={css`
         html,body  {
-          height: 100%;
+          width: 100vw;
+          height: 100vh;
           margin: 0;
         }
         body {

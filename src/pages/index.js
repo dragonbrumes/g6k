@@ -6,7 +6,8 @@ import styled from "@emotion/styled"
 const Section = styled("section")`
   max-width: 850px;
   margin: 0 auto 12px auto;
-  padding: 12px; 
+  padding: 12px;
+  font-family: "Dancing Script" ;
 `
 
 const Home = () => (
