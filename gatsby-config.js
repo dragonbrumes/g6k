@@ -17,16 +17,32 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
           {
-            family: `Dancing+Script`,
-            variants: [`400`, `700`],
-          },
+            family: `Caveat`,
+            variants: [`400`, `700`]
+          },   
+          {
+            family: 'Roboto',
+            variable: true,
+            weights: ['200..900']
+          }
+        ]
+      }
+    },  
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
          {
             family: `Caveat`,
             variants: [`400`, `700`]
+          },   
+          {
+            family: `Roboto`,
+            variants: [`400`, `700`, `900`]
           },
         ],
       },

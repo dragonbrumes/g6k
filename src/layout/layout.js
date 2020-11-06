@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { Global, css } from "@emotion/core"
 import styled from "@emotion/styled"
 
+import "./reset.css"
 import Nav from "../components/Nav"
 // import "./layout.css"
 
@@ -60,6 +61,10 @@ const Layout = ({ children }) => (
           width: 100vw;
           height: 100vh;
           margin: 0;
+        }
+        h1 {
+          font-size: 3em;
+          color: white;
         }
         h2 {
           color: blue;

@@ -34,7 +34,7 @@ const Index = () => {
           <h1>Accompagnement spirituel</h1>
         </BigBannerContent>
       </BigBanner>
-      {/* <SectionIntro>
+      <SectionIntro>
         <FlexImg>
           <Img
             fluid={data.img2.childImageSharp.fluid}
@@ -49,7 +49,7 @@ const Index = () => {
           rencontrer (affectives, émotionnelles, familiales....) dans votre vie
           avec une approche unique et innovante.
         </FlexDiv>
-      </SectionIntro> */}
+      </SectionIntro>
       <Section>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dignissimos
         aut consequuntur aspernatur corrupti ratione, odit similique tenetur
@@ -94,16 +94,19 @@ const BigBanner = styled.div`
   background-image: url(${topPhoto});
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
-  min-height: 400px;
+  height: 45vh;
+  min-height: 350px;
   width: 100%;
-  background-position: 10% 55%;
+  background-position: 10% 150%;
   background-attachment: fixed;
   background-color: #1d3557;
 
   @media screen and (max-width: 768px) {
     // background-attachment: scroll;
     background-position: 30% 55%;
+  } 
+   @media screen and (max-width: 576px) {
+    background-position: bottom 50px right -70px;
   }
 `
 
@@ -115,6 +118,8 @@ const BigBannerContent = styled.div`
   font-size: 3em;
   font-color: white;
   text-align: center;
+
+  // @media screen and (max-width: 768px) { }
 
   @media screen and (max-width: 576px) { 
     width: 90%;
@@ -130,10 +135,20 @@ const BigBannerContent = styled.div`
   & h1 {
     color: white;
     letter-spacing: 3px;
+    font-size: 1.5em;
+    font-family: "Roboto";
+    font-weight: 900;
     
-    @media screen and (max-width: 576px) {
-      font-size: smaller;  
-      padding: 10px 5px 10px;
+    @media screen and (max-width: 768px) {
+      font-size: 1em;  
+      padding: 20px 5px 10px;
+      font-weight: 400;
+
+    }
+      @media screen and (max-width: 576px) {
+      font-size: 0.5em;  
+      padding: 20px 5px 10px;
+      font-weight: 400;
 
     }
   }
@@ -149,6 +164,7 @@ const SectionIntro = styled("section")`
   justify-content: center;
   align-items: center;
   background-color: #cfd7c7;
+  font-family: "Caveat";
 
   @media screen and (max-width: 576px) {
     display: flex;
@@ -180,12 +196,13 @@ const FlexImg = styled.div`
     align-self: center;
   }
 `
-const FlexDiv = styled.div`
+const FlexDiv = styled.p`
   flex-basis: 75%;
   font-family: "Caveat";
   font-size: 2em;
   text-align: justify;
   text-justify: inter-word;
+  line-height: 1.6;
 
   @media screen and (max-width: 576px) {
     font-size: 1.5em;
@@ -196,8 +213,7 @@ const Section = styled("section")`
   max-width: 850px;
   margin: 0 auto 12px auto;
   padding: 12px;
-  font-family: "Helvetica";
+  font-family: "Sergio";
   font-size: 2em;
-  backgound-image: ;
   //
 `
