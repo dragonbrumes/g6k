@@ -25,7 +25,7 @@ const NavBar = styled("nav")`
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  background: #d81e5b;
+  background: #40798c;
   padding: 0;
   margin: 0;
 `
@@ -56,6 +56,10 @@ const MenuItem = styled.div`
   & :visited {
     text-decoration: none;
   }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 const Logo = styled.img`
   flex-grow: 0;
@@ -74,39 +78,11 @@ const StyledLink = styled(Link)`
     text-decoration: none;
   }
 `
-
-// const ActiveStyled = css`
-// display: "block";
-// width: "auto";
-// margin: "0";
-// padding: "0 15px 0 15px";
-// backgroundColor: "#fdf0d5";
-// color: "#3a3335";
-// textDecoration: "none";
-// `
-
-// const TheLink = props => (
-//   <StyledLink
-//   to="/blog"
-//   activeStyle={{
-//     display: "block",
-//     width: "auto",
-//     margin: "0",
-//     padding: "0 15px 0 15px",
-//     backgroundColor: "#fdf0d5",
-//     color: "#3a3335",
-//     textDecoration: "none",
-//   }}
-// >
-//   <MenuItem>Blog</MenuItem>
-// </StyledLink> 
-// )
-
 const Nav = () => (
   <Container>
-    <Top>
+    {/* <Top>
       <Logo src={logoQuack} alt="Logo" />
-    </Top>
+    </Top> */}
     <NavBar>
     <StyledLink
         to="/"

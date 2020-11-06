@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Post from "../components/Post"
 
-import Layout from "../components/layout"
+import Layout from "../layout/layout"
 // import SEO from "../components/seo"
 
 const Blog = ({data}) => (

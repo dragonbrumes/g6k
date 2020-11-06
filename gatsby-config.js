@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
     author: {
-      name: `Kyle Mathews`,
+      name: `G6K`,
       summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
@@ -21,11 +21,11 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Dancing Script`,
-            subsets: [`latin`],
+            family: `Dancing+Script`,
+            variants: [`400`, `700`],
           },
-          {
-            family: `Open Sans`,
+         {
+            family: `Caveat`,
             variants: [`400`, `700`]
           },
         ],
@@ -38,17 +38,17 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/content/blog`,
+    //     name: `blog`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
+        path: `${__dirname}/content/assets/`,
         name: `assets`,
       },
     },
