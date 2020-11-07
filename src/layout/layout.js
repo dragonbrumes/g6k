@@ -5,7 +5,7 @@ import { Global, css } from "@emotion/core"
 import styled from "@emotion/styled"
 
 import "./reset.css"
-import Nav from "../components/Nav"
+import Nav from "../components/nav"
 // import "./layout.css"
 
 const Wrapper = styled("div")`

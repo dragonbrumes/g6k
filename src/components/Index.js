@@ -99,7 +99,7 @@ const BigBanner = styled.div`
   width: 100%;
   background-position: 10% 150%;
   background-attachment: fixed;
-  background-color: #1d3557;
+  background-color: #fdf0d5;
 
   @media screen and (max-width: 768px) {
     // background-attachment: scroll;
@@ -163,7 +163,7 @@ const SectionIntro = styled("section")`
   flex-wrap: no-wrap;
   justify-content: center;
   align-items: center;
-  background-color: #cfd7c7;
+  background-color: #fdf0d5;
   font-family: "Caveat";
 
   @media screen and (max-width: 576px) {
