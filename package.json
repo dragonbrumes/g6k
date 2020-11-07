@@ -43,7 +43,7 @@
   "devDependencies": {
     "prettier": "2.1.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/dragonbrumes/g6k#readme",
   "keywords": [
     "gatsby"
   ],
@@ -51,11 +51,11 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dragonbrumes/g6k"
+    "url": "https://github.com/dragonbrumes/g6k"
   },
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop -H 192.168.0.15 -p 8000",
+    "build": "npm run build",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
