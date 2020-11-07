@@ -3,7 +3,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 
-import Layout from "../layout/Layout"
+import Layout from "../layout/layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 
