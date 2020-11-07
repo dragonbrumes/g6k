@@ -204,8 +204,15 @@ const FlexDiv = styled.p`
   text-justify: inter-word;
   line-height: 1.6;
 
+  @media screen and (max-width: 768px) {
+    font-size: 1em;  
+    font-weight: 400;
+
+  }
+
   @media screen and (max-width: 576px) {
-    font-size: 1.5em;
+    font-size: 2em;
+    color: #f8f8ff; 
   }
 `
 
